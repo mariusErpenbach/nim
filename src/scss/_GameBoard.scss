@@ -1,6 +1,24 @@
 #gameBoard{
     margin:auto;
-    height:80vh;
+    min-height:80vh;
     width:70vw;
     background-color:lightblue;
+    display:flex;
+    flex-direction: column;
+    header{
+        width:100%;
+        border-style:solid;
+        text-align:center;
+        p{
+
+        }
+    }
+    main{
+        display:flex;
+    aside {
+        border-style:dotted;
+        border-color:black;
+        width:50%;
+        text-align:center;
+    }}
 }
