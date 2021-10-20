@@ -1,0 +1,14 @@
+#game{
+    position:absolute;
+   display:flex;
+   background-color:hotpink;
+    margin:auto;
+    min-height:95vh;
+    width:72vw;
+    #exitGame{
+        margin-left:auto;
+        width:1vw;
+        height:1vh;
+        font-size:0.8em;
+    }
+}
