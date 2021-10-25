@@ -1,14 +1,29 @@
 #game{
     position:absolute;
-   display:flex;
+   display:none;
    background-color:hotpink;
     margin:auto;
+    flex-direction: column;
+    align-items: center;
     min-height:95vh;
     width:72vw;
+    animation-name:start;
+    animation-duration:0.8s;
     #exitGame{
         margin-left:auto;
-        width:1vw;
-        height:1vh;
-        font-size:0.8em;
+        border-style:solid;
+        border-width:0px 0px 1px 1px ;
+        i{
+            font-size:1.4em; 
+        }
+    }
+}
+
+@keyframes start {
+    0%{
+        opacity:0
+    }
+    100%{
+        opacity:100%;
     }
 }

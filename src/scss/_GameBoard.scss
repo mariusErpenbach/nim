@@ -5,6 +5,7 @@
     background-color:lightblue;
     display:flex;
     flex-direction: column;
+    align-items: center;
     header{
         width:100%;
         border-style:solid;
@@ -15,10 +16,17 @@
     }
     main{
         display:flex;
+        font-size:1em;
+       @include for-desktop-up-l{
+           width:70%;
+           font-size:1.3em;
+       }
     aside {
+        margin:1%;
         border-style:dotted;
         border-color:black;
         width:50%;
+        
         text-align:center;
     }}
 }
