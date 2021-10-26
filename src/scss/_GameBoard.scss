@@ -1,32 +1,128 @@
-#gameBoard{
-    margin:auto;
-    min-height:95vh;
-    width:70vw;
-    background-color:lightblue;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    header{
-        width:100%;
-        border-style:solid;
-        text-align:center;
-        p{
-
-        }
-    }
-    main{
+@include for-desktop-xl{
+    #gameBoard{
+        margin:auto;
+        min-height:95vh;
+        width:70vw;
+        background-color:rgb(190, 170, 126);
         display:flex;
-        font-size:1em;
-       @include for-desktop-up-l{
-           width:70%;
-           font-size:1.3em;
-       }
-    aside {
-        margin:1%;
-        border-style:dotted;
-        border-color:black;
-        width:50%;
-        
-        text-align:center;
-    }}
+        flex-direction: column;
+        align-items: center;
+        header{
+            width:100%;
+            border-style:solid;
+            text-align:center;
+            p{
+    
+            }
+        }
+        main{
+            display:flex;
+            font-size:1em;
+           
+           
+        aside {
+            margin:1%;
+            border-style:dotted;
+            border-color:black;
+            width:50%;
+            
+            text-align:center;
+        }}
+    }
+}
+@include for-desktop-l{
+    #gameBoard{
+        margin:auto;
+        min-height:95vh;
+        width:70vw;
+        background-color:lightblue;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        header{
+            width:100%;
+            border-style:solid;
+            text-align:center;
+            p{
+    
+            }
+        }
+        main{
+            display:flex;
+            font-size:1em;
+           
+           
+        aside {
+            margin:1%;
+            border-style:dotted;
+            border-color:black;
+            width:50%;
+            
+            text-align:center;
+        }}
+    }
+}
+@include for-desktop-m{
+    #gameBoard{
+        margin:auto;
+        min-height:95vh;
+        width:70vw;
+        background-color:rgb(38, 38, 235);
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        header{
+            width:100%;
+            border-style:solid;
+            text-align:center;
+            p{
+    
+            }
+        }
+        main{
+            display:flex;
+            font-size:1em;
+           
+           
+        aside {
+            margin:1%;
+            border-style:dotted;
+            border-color:black;
+            width:50%;
+            
+            text-align:center;
+        }}
+    }
+}
+@include for-mobile-l{
+    #gameBoard{
+        margin:auto;
+        min-height:95vh;
+        width:70vw;
+        background-color:rgb(173, 174, 230);
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        header{
+            width:100%;
+            border-style:solid;
+            text-align:center;
+            p{
+    
+            }
+        }
+        main{
+            display:flex;
+            font-size:1em;
+           
+           
+        aside {
+            margin:1%;
+            border-style:dotted;
+            border-color:black;
+            width:50%;
+            
+            text-align:center;
+        }}
+    }
 }

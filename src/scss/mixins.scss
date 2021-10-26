@@ -1,11 +1,20 @@
-@mixin for-desktop-up-l {
-    @media (min-width: 916px) { @content; }
+// media queries
+@mixin for-desktop-xl {
+    @media (min-width: 1200px) { @content; }
+  }
+@mixin for-desktop-l {
+    @media (max-width: 1200px) { @content; }
   }
 
-  @mixin for-desktop-up-m {
-    @media (min-width: 500px) { @content; }
+  @mixin for-desktop-m {
+    @media (max-width: 500px) { @content; }
   }
 
-  @mixin for-desktop-up-s {
-    @media (max-width: 499px) { @content; }
+  @mixin for-mobile-l{
+    @media (max-width: 425px) { @content; }
   }
+
+  @mixin for-mobile-s{
+    @media (max-width: 320px) { @content; }
+  }
+
