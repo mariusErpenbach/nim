@@ -11,7 +11,7 @@
   }
 
   @mixin for-mobile-l{
-    @media (max-width: 425px) { @content; }
+    @media (max-width: 499px) { @content; }
   }
 
   @mixin for-mobile-s{

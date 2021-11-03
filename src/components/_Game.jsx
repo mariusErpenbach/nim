@@ -15,7 +15,6 @@ useEffect(() => {
 switch (gameStatus) {
     case "start":
         {
-
             setContent(<PhaseStart function={getNumberOfSticks} nos={numberOfSticks}/>)
         }
         break;
