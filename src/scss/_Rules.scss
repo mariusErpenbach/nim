@@ -1,0 +1,35 @@
+@include for-desktop-xl{
+    #rules{
+    border-style:solid;
+    border-width:1px;
+    width:auto;
+    display:flex;
+    flex-direction: column;
+    height:auto;
+    h1{
+        border-style:none;
+        margin-top:2%;
+    }
+    ul{
+        text-align:start;
+        list-style-type: none;
+        margin-left:-1em;
+        li{
+            margin:1%;
+            margin-right:5%;
+            margin-top:1%;
+            border-style:solid;
+            border-width:0px 0px 1px 0px;
+            text-decoration:none;
+        }
+    }
+}}
+@include for-desktop-l{
+ }
+@include for-desktop-m{
+}
+@include for-mobile-l{
+}
+
+@include for-mobile-s{
+}

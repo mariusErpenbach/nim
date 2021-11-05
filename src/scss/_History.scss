@@ -1,0 +1,38 @@
+
+@include for-desktop-xl {
+    .history{
+        width:auto;
+        border-style:solid;
+        border-width:1px;
+        margin-bottom:5%;
+       
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        h1{
+            font-size:1.2em;
+            margin-bottom:0;
+        }
+        p{
+            width:90%;
+            border-style:solid;
+            border-width:1px;
+        }
+    }
+  }
+@include for-desktop-l {
+    
+  }
+
+  @include for-desktop-m {
+    
+  }
+
+  @include for-mobile-l{
+    
+  }
+
+  @include for-mobile-s{
+    
+  }
+

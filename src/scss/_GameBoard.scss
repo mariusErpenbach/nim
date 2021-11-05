@@ -7,11 +7,17 @@
         display:flex;
         flex-direction: column;
         align-items: center;
+    header{
+        font-size: 1.6em;
+        border-style:solid;
+        border-width:0px 0px 1px 0px;
+        width:90%;
+        text-align: center;
+    }
         .gameboard-mid-line{
             height:85vh;
             width:3%;
-            border-color:red;
-            border-style:solid;
+           
             display:flex;
             align-items: center;
             div{
@@ -22,34 +28,20 @@
                 left:50%;
             }
         }
-        header{
-            width:60%;
-            border-style:solid;
-            border-width:1px;
-            text-align:center;
-            p{
-                font-size:1.6em;
-            }
-        }
+     
         main{
             display:flex;
             font-size:1em;
             justify-content: center;
            
         aside {
-            display:flex;
-            flex-direction: column;
+          
             align-items: center;
             margin:1%;
-            border-style:dotted;
-            border-color:black;
+            
             width:45%;
             text-align:center;
-            h1{
-                margin-top:2%;
-                width:100%;
-                font-size:1.4em;
-            }
+            
         }}
     }
 }
@@ -78,14 +70,7 @@
                 left:50%;
             }
         }
-        header{
-            width:100%;
-            border-style:solid;
-            text-align:center;
-            p{
-    
-            }
-        }
+      
         main{
             display:flex;
             font-size:1em;
@@ -113,14 +98,7 @@
         display:flex;
         flex-direction: column;
         align-items: center;
-        header{
-            width:100%;
-            border-style:solid;
-            text-align:center;
-            p{
-    
-            }
-        }
+     
         main{
             display:flex;
             font-size:1em;
@@ -145,14 +123,7 @@
         display:flex;
         flex-direction: column;
         align-items: center;
-        header{
-            width:100%;
-            border-style:solid;
-            text-align:center;
-            p{
-                
-            }
-        }
+     
         main{
             display:flex;
             font-size:1em;
