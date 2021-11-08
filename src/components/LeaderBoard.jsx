@@ -1,9 +1,19 @@
-import React from "react";
-
+import React,{useState} from "react";
+import data from "./leaderBoardList.json"
 const LeaderBoard = () => {
+
+    const [leaderList,setLeaderlist] = useState(data);
+
+    const currentLeaderBoard = () => {
+        for (let i=0;i>leaderList.length;i++){
+            console.log("lol")
+        }
+    }
+
+
     return (
     <div id="leaderBoard">
-    LeaderBoard
+    
     </div>)
 }
 

@@ -1,5 +1,20 @@
-#leaderBoard {
-    min-height:80%;
-    border-style:solid;
+@include for-desktop-xl {
+    #leaderBoard{
+
+    }
+  }
+@include for-desktop-l {
     
-}
+  }
+
+  @include for-desktop-m {
+    
+  }
+
+  @include for-mobile-l{
+    
+  }
+
+  @include for-mobile-s{
+    
+  }

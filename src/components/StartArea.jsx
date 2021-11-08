@@ -9,7 +9,8 @@ const StartArea = (props) =>{
 
     return (<div id="startArea">
     <div id="playButton" >
-    <i className="fas fa-play" onClick={startGame}></i></div>
+ 
+    <i className="fas fa-play" onClick={startGame}></i>   <p>Start the game</p></div>
     </div>)
 }
 
