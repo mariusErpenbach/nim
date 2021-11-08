@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import { useEffect } from "react/cjs/react.development";
-import PhaseOne from "./_PhaseOne";
-import PhaseStart from "./_PhaseStart";
+import PhaseOne from "./PhaseOne";
+import PhaseStart from "./PhaseStart";
 
 const Game = (props) =>{
 const [numberOfSticks, setNumberOfSticks] = useState("")

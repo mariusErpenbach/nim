@@ -1,9 +1,9 @@
 import React,{useState} from "react"
 import LeaderBoard from "./LeaderBoard"
 import StartArea from "./StartArea"
-import Rules from "./_Rules"
-import History from "./_History"
-import Game from "./_Game"
+import Rules from "./Rules"
+import History from "./History"
+import Game from "./Game"
 
 const GameBoard = () =>{
 
