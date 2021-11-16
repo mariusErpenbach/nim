@@ -4,12 +4,11 @@ import StartArea from "./StartArea"
 import Rules from "./Rules"
 import History from "./History"
 import Game from "./Game"
-
+import data from "./leaderBoardList.json"
 const GameBoard = () =>{
 
 const [gameStatus, setGameStatus] = useState("none")
-
-
+const [leaderList,setLeaderlist] = useState(data);
 
 return(
     <div id="gameBoard">
@@ -21,7 +20,7 @@ return(
         </aside>
         <div className="gameboard-mid-line"><div></div></div>
         <aside>
-            <LeaderBoard/>
+            <LeaderBoard leaderList={leaderList}/>
             <StartArea/>
         </aside>
     </main>

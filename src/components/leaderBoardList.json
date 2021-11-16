@@ -1,6 +1,6 @@
-{
-    "jeremy": 10,
-    "Sammy" : 12,
-    "Nina" : 5,
-    "Henry" : 4
-}
+[
+    {"jeremy": 10},
+    {"Sammy" : 12},
+    {"Nina" : 5},
+    {"Henry" : 4}
+]

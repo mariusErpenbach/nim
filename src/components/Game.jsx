@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import { useEffect } from "react/cjs/react.development";
-import PhaseOne from "./PhaseOne";
+// import PhaseOne from "./PhaseOne";
 import PhaseStart from "./PhaseStart";
 
 const Game = (props) =>{
@@ -34,7 +34,7 @@ switch (gameStatus) {
 
     return (
         <div id="game">
-        <div id="exitGame" ><i class="fas fa-times" onClick={exitGame}></i></div>
+        <div id="exitGame" ><i className="fas fa-times" onClick={exitGame}></i></div>
         <main>
         {content}
         </main>

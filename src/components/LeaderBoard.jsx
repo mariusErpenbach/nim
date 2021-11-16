@@ -1,20 +1,26 @@
-import React,{useState} from "react";
-import data from "./leaderBoardList.json"
-const LeaderBoard = () => {
+import React from "react";
 
-    const [leaderList,setLeaderlist] = useState(data);
 
-    const currentLeaderBoard = () => {
-        for (let i=0;i>leaderList.length;i++){
-            console.log("lol")
-        }
-    }
+const LeaderBoard = (props) => {
 
+
+const boardStats = () => {
+
+}
+   
+   
+  console.log(props.leaderList)
+    const items = props.leaderList.map((item, i) => ( 
+       <div> {i}</div>
+      ));      
 
     return (
+    <React.Fragment>
     <div id="leaderBoard">
-    
-    </div>)
+    <h2>Leaderboard</h2>
+        {items}
+    </div>
+    </React.Fragment>)
 }
 
 export default LeaderBoard

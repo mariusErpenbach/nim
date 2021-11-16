@@ -1,6 +1,6 @@
 import React from "react";
 
-const StartArea = (props) =>{
+const StartArea = () =>{
 
     function startGame () {
         var element = document.querySelector("#game")
