@@ -1,6 +1,22 @@
 [
-    {"jeremy": 10},
-    {"Sammy" : 12},
-    {"Nina" : 5},
-    {"Henry" : 4}
+        {"Name":"Jeremy",
+        "Sticks": 200,
+        "Turns": 8,
+        "Time" : 40
+        },
+        {"Name":"Sarah",
+        "Sticks": 200,
+        "Turns": 8,
+        "Time" : 40
+       },
+       {"Name":"Benny",
+        "Sticks": 250,
+        "Turns": 8,
+        "Time" : 40
+       },
+       {"Name":"Henry",
+        "Sticks": 200,
+        "Turns": 8,
+        "Time" : 40
+       }
 ]
