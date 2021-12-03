@@ -5,10 +5,12 @@ import Rules from "./Rules"
 import History from "./History"
 import Game from "./Game"
 import data from "./leaderBoardList.json"
-const GameBoard = () =>{
 
-const [gameStatus, setGameStatus] = useState("none")
+const GameBoard = () =>{
+    
+
 const [leaderList,setLeaderlist] = useState(data);
+
 
 return(
     <div id="gameBoard">
