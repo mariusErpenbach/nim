@@ -7,10 +7,11 @@ const StartArea = () =>{
         element.style.display = "flex"
     }
 
-    return (<div id="startArea">
-    <div id="playButton" >
- 
-    <i className="fas fa-play" onClick={startGame}></i>   <p>Start the game</p></div>
+    return (
+    <div id="startArea">
+    <div id="playButton" onClick={startGame}>
+    <p>Play<i className="fas fa-play" ></i></p>
+    </div>
     </div>)
 }
 

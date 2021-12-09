@@ -3,12 +3,13 @@ import React,{useState,useEffect} from "react";
 
 const LeaderBoard = (props) => {
 
-  var leaderListItems = [];
 const ranking =()=> {
   
     const leaderboard = props.leaderList;
   
-      
+          
+  
+   let  leaderListItems =[]
        // using this for loop to sort the leaderList 
       for (let i=0;i<leaderboard.length;i++){
         // reduce the array of object to find and push the highest score.
@@ -23,25 +24,42 @@ const ranking =()=> {
       console.log(leaderListItems)
       return leaderListItems
     }
- 
+  
 
-    const items = props.leaderList.map((item,i)=>(
-    <div className="playerStats">
-    <div className="playerName">{item.Name}</div>
-    <div className="playerSticks">{item.Sticks}</div>
-    <div className="playerTurns">{item.Turns}</div>
-    <div className="playerTime">{item.Time}</div>
-    </div>)
+    const items = props.leaderList.map((item,t)=>(
+    <tr className="playerStats">
+    <th className="rankIcon">{t+1}</th>
+    <th className="playerName">{item.Name}</th>
+    <th className="playerSticks">{item.Sticks}</th>
+    <th className="playerTurns">{item.Turns}</th>
+    <th className="playerTime">{item.Time}</th>
+    <th className="playerScore" >{parseFloat(item.Sticks/item.Turns).toFixed(1)}</th>
+    </tr>
     
     )
     
+    )
+ 
     
     return(
     <React.Fragment>
     <div id="leaderBoard">
-      <h2>Leaderboard</h2>
-      <div id="leaderboardFrame">{items}</div>
-      <div></div>
+      <h2><i className="fas fa-trophy"></i> Leaderboard</h2>
+      <div id="leaderboardFrame">
+      <table>
+      <tr >
+      <th>#</th>
+      <th>Player</th>
+      <th>Sticks</th>
+      <th>Turns</th>
+      <th>Time</th>
+      <th className="playerScore">Score</th>
+      </tr>
+      {items}
+      </table>
+      <p>Time/Sticks=Score</p>
+      </div>
+      
     </div>
     </React.Fragment>
   )
