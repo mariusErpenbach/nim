@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react";
-
+import StartArea from "./StartArea"
 
 const LeaderBoard = (props) => {
 
@@ -44,8 +44,8 @@ const ranking =()=> {
     return(
     <React.Fragment>
     <div id="leaderBoard">
-      <h2><i className="fas fa-trophy"></i> Leaderboard</h2>
       <div id="leaderboardFrame">
+      <h2><i className="fas fa-trophy"></i> Leaderboard</h2>
       <table>
       <tr >
       <th>#</th>
@@ -59,7 +59,7 @@ const ranking =()=> {
       </table>
       <p>Time/Sticks=Score</p>
       </div>
-      
+      <StartArea/>
     </div>
     </React.Fragment>
   )

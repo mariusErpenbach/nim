@@ -1,6 +1,6 @@
 import React,{useState} from "react"
 import LeaderBoard from "./LeaderBoard"
-import StartArea from "./StartArea"
+
 import Rules from "./Rules"
 import History from "./History"
 import Game from "./Game"
@@ -15,6 +15,7 @@ const [leaderList,setLeaderlist] = useState(data);
 return(
     <div id="gameBoard">
     <header>
+    <img src={dividerOne}></img>
     <p>Nim</p>
     <img src={dividerOne}></img>
     </header>
@@ -23,10 +24,10 @@ return(
             <History/>
             <Rules/>
         </aside>
-        <div className="gameboard-mid-line"><div></div></div>
+        <div className="gameboard-mid-line">  <img src={dividerOne}></img></div>
         <aside>
             <LeaderBoard leaderList={leaderList}/>
-            <StartArea/>
+            
         </aside>
     </main>
     <Game/>
