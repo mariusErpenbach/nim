@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const StartArea = () =>{
 
     function startGame () {
@@ -9,8 +9,10 @@ const StartArea = () =>{
 
     return (
     <div id="startArea">
-    <div id="playButton" onClick={startGame}>
-    <p>Play<i className="fas fa-play" ></i></p>
+    <div id="playButton" >
+    <Link to="/playNim">
+    <p>Play<i className="fas fa-play"></i></p>
+    </Link>
     </div>
     </div>)
 }
