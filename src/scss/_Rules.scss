@@ -35,7 +35,9 @@
         margin-top:-1.5em;
         text-align:start;
         list-style-type: none;
-       
+       display:flex;
+       flex-direction: column;
+       align-items: center;
         p{
             width:90%;
             margin-left:auto;
@@ -44,7 +46,7 @@
             background-color:rgb(255, 217, 217);
         }
         li{
-           
+            width:90%;
             color:rgb(10, 2, 37);
             text-decoration:none;
             background-color: $inner-frame-body;

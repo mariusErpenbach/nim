@@ -5,14 +5,16 @@ import LeaderBoard from "./LeaderBoard"
 import Rules from "./Rules"
 import History from "./History"
 
-import data from "./leaderBoardList.json"
+
 import dividerOne from "../img/divider1.png"
 
 const GameBoard = () =>{
     
 
-const [leaderList,setLeaderlist] = useState(data);
 
+   
+
+ 
 
 return(
     <React.Fragment>
@@ -29,7 +31,7 @@ return(
         </aside>
         <div className="gameboard-mid-line">  <img src={dividerOne}></img></div>
         <aside>
-            <LeaderBoard leaderList={leaderList}/>
+            <LeaderBoard/>
             
         </aside>
     </main>
