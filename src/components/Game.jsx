@@ -1,10 +1,18 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react/cjs/react.development";
-// import PhaseOne from "./PhaseOne";
-import PhaseStart from "./PhaseStart";
+
+
 
 const Game = (props) =>{
+
+    const [numberOfSticks, setnumberOfSticks] = useState(0)
+
+useEffect(() => {
+    console.log("Game-effect-fired")
+    return function cleanup() {
+       console.log("cleaned up")
+      };
+})
 
     return (
         <React.Fragment>
@@ -15,11 +23,13 @@ const Game = (props) =>{
         </Link>
         </header>
       
+        
+        
         <main>
-        <form><p>chose number of Sticks</p>
-        <input type="number" onChange={console.log(this)}></input> 
-        </form>
-        <button type="submit">Accept</button>
+       <p>choose number of Sticks</p>
+        <input id="stickAmount" type="number"></input> 
+        <button onClick={()=>setnumberOfSticks(document.getElementById("stickAmount").value)}>Accept</button>
+        <div id="bigStack">{numberOfSticks}</div>
         </main>
         </div>
         </React.Fragment>
