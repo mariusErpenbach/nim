@@ -1,43 +1,35 @@
 import React,{useState} from "react";
+import { Link } from "react-router-dom";
 import { useEffect } from "react/cjs/react.development";
 // import PhaseOne from "./PhaseOne";
 import PhaseStart from "./PhaseStart";
 
 const Game = (props) =>{
-// const [numberOfSticks, setNumberOfSticks] = useState("")
-// function getNumberOfSticks  (nos) {
-// setNumberOfSticks(nos)
-// }
-// const [gameStatus, setGameStatus] = useState("start")
-// const [content, setContent] = useState("")
-// useEffect(() => {
-//   console.log("Game useEffect fired")
-// switch (gameStatus) {
-//     case "start":
-//         {
-//             setContent(<PhaseStart function={getNumberOfSticks} nos={numberOfSticks}/>)
-//         }
-//         break;
-    
-        
-//     default:
-//         break;
-// }
-// }, [gameStatus])
+const [numberOfSticks, setNumberOfSticks] = useState("")
+function getNumberOfSticks  (nos) {
+ setNumberOfSticks(nos)
+}
 
- 
-//     function exitGame () {
-//         var element = document.querySelector("#game")
-//         element.style.display = "none" 
-//     }
+useEffect(() => {
+    console.log("change happened")
+  });
 
 
     return (
         <React.Fragment>
         <div id="game">
+        <div id="exitFrame">  
+        <Link to="/">
         <div id="exitGame" ><i className="fas fa-times"></i></div>
+        </Link>
+        </div>
+      
         <main>
-        HI
+        <div><p>chose number of Sticks</p>
+        <input type="number" onChange={console.log(this)}></input> 
+        <div id="testing"></div>
+        </div>
+
         </main>
         </div>
         </React.Fragment>
