@@ -8,9 +8,10 @@ const Game = (props) =>{
     const [numberOfSticks, setnumberOfSticks] = useState(0)
 
 useEffect(() => {
-    console.log("Game-effect-fired")
+ document.getElementById("bigStack").innerHTML= document.getElementById("stickAmount").value;
+
     return function cleanup() {
-       console.log("cleaned up")
+       
       };
 })
 
@@ -27,9 +28,9 @@ useEffect(() => {
         
         <main>
        <p>choose number of Sticks</p>
-        <input id="stickAmount" type="number"></input> 
+        <input id="stickAmount" type="number" onChange={()=>setnumberOfSticks(document.getElementById("stickAmount").value)}></input> 
         <button onClick={()=>setnumberOfSticks(document.getElementById("stickAmount").value)}>Accept</button>
-        <div id="bigStack">{numberOfSticks}</div>
+        <div id="bigStack"></div>
         </main>
         </div>
         </React.Fragment>
