@@ -25,41 +25,36 @@ const splitOne = (button) =>{
     button.innerHTML = "sticks to staple two"
 }
 const splitTwo = (button, userValue) =>{
-    let stack = document.getElementById("stackTwo")
-    stack.innerHTML = userValue
+    let stackTwo = document.getElementById("stackTwo")
+    let stackThree = document.getElementById("stackThree")
+    let bigStack = document.getElementById("bigStack")
+    // let user split the bigStack one more time (but 1 stick needs to be left in the bigstack for the third stack)
+    stackTwo.innerHTML = userValue
+    bigStack.innerHTML -= userValue;
+    stackThree.innerHTML = bigStack.innerHTML;
+    bigStack.innerHTML = "";
     setnumberOfSticks(numberOfSticks-userValue)
-    button.innerHTML ="sticks to staple three"
-    splitThree(button)
+
+    
 }
 
-const splitThree = (button) =>{
-    let stack = document.getElementById("stackThree")
-    stack.innerHTML = numberOfSticks
-    document.getElementById("bigStack").innerHTML=""
-}
 
 
 const lockStack = () =>{
     let stackOne = document.getElementById("stackOne")
     let stackTwo = document.getElementById("stackTwo")
-    let stackThree = document.getElementById("stackThree")
+
 
     let inputButton = document.getElementById("inputButton")
     var inputfield = document.getElementById("stickAmount")
      // clear input
         inputfield.value= ""
     // checks if number input was correctly by (= atleast 3 sticks for 1 per stack each)
-    if (numberOfSticks > 2){
-      
-        if(stackOne.innerHTML < 2){
+    if (stackOne.innerHTML<1){
         return splitOne(inputButton)
-        }
-        else if(stackTwo.innerHTML < 2){
-            return splitTwo(inputButton, numberOfSticks)
-        }
-        else if(stackThree.innerHTML < 2){
-            return splitThree(inputButton)
-        }
+    }
+    else if (stackTwo.innerHTML<1){
+        return splitTwo(inputButton, numberOfSticks)
     }
 }
 
