@@ -3,9 +3,12 @@
     height:95vh;
     display:flex;
     flex-direction: column;
+    align-items: center;
     #exitFrame{
+      align-self: flex-end;
       display:flex;
       justify-content: flex-end;
-      margin-right:2px;
+      margin-right:3px;
     }
+ 
 }

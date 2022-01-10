@@ -1,8 +1,10 @@
-import react,{useState} from "react"
+import react,{useState,useEffect} from "react"
 
 const StackSplitter = (props) => {
 
     const [numberOfSticks, setnumberOfSticks] = useState(0)
+    const [visible, setvisible] = useState(true)
+    
 
     const splitOne = (button) =>{
         let stack = document.getElementById("stackOne")
@@ -22,7 +24,10 @@ const StackSplitter = (props) => {
         bigStack.innerHTML -= userValue;
         stackThree.innerHTML = bigStack.innerHTML;
         bigStack.innerHTML = "";
+        
         setnumberOfSticks(numberOfSticks-userValue)
+      return setvisible(0)
+        
     }
     
     
@@ -51,17 +56,16 @@ const StackSplitter = (props) => {
     }
 
 
-return(
+return visible === true? (
 <div className="stackSplitter">
+
 <p>choose number of Sticks</p>
-        <input id="stickAmount" type="number" onChange={()=>{setnumberOfSticks(document.getElementById("stickAmount").value)}}></input> 
-        <button id="inputButton" onClick={lockStack}>lock stack</button>
-        <div id="bigStack"></div>
-        <div id="stackOne"></div>
-        <div id="stackTwo"></div>
-        <div id="stackThree"></div>
+<input id="stickAmount" type="number" onChange={()=>{setnumberOfSticks(document.getElementById("stickAmount").value)}}></input> 
+<button id="inputButton" onClick={lockStack}>lock stack</button>
+ 
         
 </div>)
+:<div/>
 }
 
 export default StackSplitter
