@@ -1,0 +1,11 @@
+#game{
+    background-color:peru;
+    height:95vh;
+    display:flex;
+    flex-direction: column;
+    #exitFrame{
+      display:flex;
+      justify-content: flex-end;
+      margin-right:2px;
+    }
+}
