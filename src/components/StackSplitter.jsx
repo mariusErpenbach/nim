@@ -1,6 +1,6 @@
 import react,{useState,useEffect} from "react"
 
-const StackSplitter = (props) => {
+const StackSplitter = () => {
 
     const [numberOfSticks, setnumberOfSticks] = useState(0)
     const [visible, setvisible] = useState(true)
@@ -10,23 +10,26 @@ const StackSplitter = (props) => {
         let stack = document.getElementById("stackOne")
         let bigStack = document.getElementById("bigStack")
         // subtract 40% from the bigStack to the first stack (first computer move)
-        stack.innerHTML = Math.floor((numberOfSticks/100)*40)
-        setnumberOfSticks(numberOfSticks-Math.floor((numberOfSticks/100)*40))
-        bigStack.innerHTML = numberOfSticks-Math.floor((numberOfSticks/100)*40)
+        let randomNumber = Math.floor(Math.random()*(75-1)+1);
+        console.log(randomNumber)
+        stack.innerHTML = Math.floor((numberOfSticks/100)*randomNumber)
+        setnumberOfSticks(numberOfSticks-Math.floor((numberOfSticks/100)*randomNumber))
+        bigStack.innerHTML = numberOfSticks-Math.floor((numberOfSticks/100)*randomNumber)
         button.innerHTML = "sticks to staple two"
     }
-    const splitTwo = (button, userValue) =>{
+    const splitTwo = (userValue) =>{
         let stackTwo = document.getElementById("stackTwo")
         let stackThree = document.getElementById("stackThree")
         let bigStack = document.getElementById("bigStack")
         // let user split the bigStack one more time (but 1 stick needs to be left in the bigstack for the third stack)
         stackTwo.innerHTML = userValue
         bigStack.innerHTML -= userValue;
+        // split the remaining sticks from bigStack to stackThree
         stackThree.innerHTML = bigStack.innerHTML;
         bigStack.innerHTML = "";
-        
+        // update states
         setnumberOfSticks(numberOfSticks-userValue)
-      return setvisible(0)
+        setvisible(0)
         
     }
     
@@ -51,7 +54,7 @@ const StackSplitter = (props) => {
             }     
             else{
             inputfield.value= ""
-            return splitTwo(inputButton, numberOfSticks)}
+            return splitTwo(numberOfSticks)}
         }
     }
 
