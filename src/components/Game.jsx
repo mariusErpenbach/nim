@@ -5,16 +5,9 @@ import StackSplitter from "./StackSplitter";
 
 const Game = (props) =>{
 
-const [gameState, setgameState] = useState(StackSplitter)
 
-useEffect(() => {
-    //   document.getElementById("bigStack").innerHTML = numberOfSticks 
-    console.log("gameEffect fired")
-    console.log(gameState)
-    //     return function cleanup() {
-         
-    //       };
-    })
+const [Turn, setTurn] = useState("Player")
+
 
 
     return (
@@ -32,7 +25,7 @@ useEffect(() => {
         <aside><p id="bigStack"></p></aside>
         </div>
         
-        
+        {Turn==="Player"}? <PlayerTurn/> : <ComputerTurn/>
         <StackSplitter/>
         
  

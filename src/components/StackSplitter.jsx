@@ -1,6 +1,6 @@
 import react,{useState,useEffect} from "react"
 
-const StackSplitter = () => {
+const StackSplitter = (props) => {
 
     const [numberOfSticks, setnumberOfSticks] = useState(0)
     const [visible, setvisible] = useState(true)
