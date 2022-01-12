@@ -1,8 +1,8 @@
 import React,{useState,useEffect} from "react";
 import { Link } from "react-router-dom";
 import StackSplitter from "./StackSplitter";
-
-
+import PlayerTurn from "./PlayerTurn";
+import ComputerTurn from "./ComputerTurn";
 const Game = (props) =>{
 
 
@@ -25,7 +25,7 @@ const [Turn, setTurn] = useState("Player")
         <aside><p id="bigStack"></p></aside>
         </div>
         
-        {Turn==="Player"}? <PlayerTurn/> : <ComputerTurn/>
+        {Turn==="Player"? <PlayerTurn/> : <ComputerTurn/>}
         <StackSplitter/>
         
  
