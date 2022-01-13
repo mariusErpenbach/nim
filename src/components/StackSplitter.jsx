@@ -16,7 +16,7 @@ const StackSplitter = (props) => {
         setnumberOfSticks(numberOfSticks-Math.floor((numberOfSticks/100)*randomNumber))
         bigStack.innerHTML = numberOfSticks-Math.floor((numberOfSticks/100)*randomNumber)
         button.innerHTML = "sticks to staple two"
-        props.onChange("hi")
+        
     }
     const splitTwo = (userValue) =>{
         let stackTwo = document.getElementById("stackTwo")
@@ -31,7 +31,7 @@ const StackSplitter = (props) => {
         // update states
         setnumberOfSticks(numberOfSticks-userValue)
         // setvisible(0)
-        
+        props.finisher()
     }
     
     
@@ -60,22 +60,15 @@ const StackSplitter = (props) => {
     }
 
 
-return  (
+return props.active === true ?  (
 <div className="stackSplitter">
 
-<div id="stackArea">
-        <main>
-        <div className="stacks"><p id="stackOne"></p></div>
-        <div className="stacks"><p id="stackTwo"></p></div>
-        <div className="stacks"><p id="stackThree"></p></div>
-        </main>
-        <aside><p id="bigStack"></p></aside>
-        </div>
+
 <input id="stickAmount" type="number" onChange={()=>{setnumberOfSticks(document.getElementById("stickAmount").value)}}></input> 
 <button id="inputButton" onClick={lockStack}>lock stack</button>
  
         
-</div>)
+</div>) : <div/>
 
 }
 
