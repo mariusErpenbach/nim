@@ -2,7 +2,7 @@ import react,{useState,useEffect} from "react"
 
 const StackSplitter = (props) => {
 
-    const [numberOfSticks, setnumberOfSticks] = useState(0)
+    const [numberOfSticks, setnumberOfSticks] = useState(props.stickAmount)
     const [visible, setvisible] = useState(true)
     
 
@@ -16,6 +16,7 @@ const StackSplitter = (props) => {
         setnumberOfSticks(numberOfSticks-Math.floor((numberOfSticks/100)*randomNumber))
         bigStack.innerHTML = numberOfSticks-Math.floor((numberOfSticks/100)*randomNumber)
         button.innerHTML = "sticks to staple two"
+        props.onChange("hi")
     }
     const splitTwo = (userValue) =>{
         let stackTwo = document.getElementById("stackTwo")
@@ -29,7 +30,7 @@ const StackSplitter = (props) => {
         bigStack.innerHTML = "";
         // update states
         setnumberOfSticks(numberOfSticks-userValue)
-        setvisible(0)
+        // setvisible(0)
         
     }
     
@@ -48,7 +49,7 @@ const StackSplitter = (props) => {
             return splitOne(inputButton)
         }
         else if (stackTwo.innerHTML<1){ 
-            // check if input was low enough to be splittet 2 times afterwards
+            // check if input was low enough to be splittet 2 more times
             if (parseInt(bigStack.innerHTML)<=numberOfSticks){
                 return  alert("to much input")
             }     
@@ -59,16 +60,23 @@ const StackSplitter = (props) => {
     }
 
 
-return visible === true? (
+return  (
 <div className="stackSplitter">
 
-<p>choose number of Sticks</p>
+<div id="stackArea">
+        <main>
+        <div className="stacks"><p id="stackOne"></p></div>
+        <div className="stacks"><p id="stackTwo"></p></div>
+        <div className="stacks"><p id="stackThree"></p></div>
+        </main>
+        <aside><p id="bigStack"></p></aside>
+        </div>
 <input id="stickAmount" type="number" onChange={()=>{setnumberOfSticks(document.getElementById("stickAmount").value)}}></input> 
 <button id="inputButton" onClick={lockStack}>lock stack</button>
  
         
 </div>)
-:<div/>
+
 }
 
 export default StackSplitter

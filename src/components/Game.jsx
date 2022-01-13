@@ -5,28 +5,39 @@ import PlayerTurn from "./PlayerTurn";
 import ComputerTurn from "./ComputerTurn";
 const Game = (props) =>{
 
+const [stackOne, setstackOne] = useState(0)
+const [stackTwo, setstackTwo] = useState(0)
+const [stackThree, setstackThree] = useState(0)
+const [NoS, setNoS] = useState(0)
+const [Turn, setTurn] = useState("")
 
-const [Turn, setTurn] = useState("Player")
 
+useEffect(() => {
+    console.log("game effect fired")
+    return () => {
+        console.log("game clean effect fired")
+    }
+}, [NoS])
 
-
+const stackSplitterChange = (stack) => {
+console.log("yippi")
+}
     return (
         <React.Fragment>
         <div id="game">
         <header id="exitFrame">  
         <Link to="/"><i className="fas fa-times"></i></Link>
         </header>
-        <div id="stackArea">
-        <main>
-        <div className="stacks"><p id="stackOne"></p></div>
-        <div className="stacks"><p id="stackTwo"></p></div>
-        <div className="stacks"><p id="stackThree"></p></div>
-        </main>
-        <aside><p id="bigStack"></p></aside>
-        </div>
         
-        {Turn==="Player"? <PlayerTurn/> : <ComputerTurn/>}
-        <StackSplitter/>
+        
+        {Turn==="Player"? <PlayerTurn/>:<div/>}
+        {Turn==="Computer"? <ComputerTurn/>:<div/>}
+        <StackSplitter  onChange={stackSplitterChange}
+        stickAmount={NoS}
+        stackOne = {stackOne}
+        stackTwo = {stackTwo}
+        stackThree = {stackThree}
+         />
         
  
         </div>
