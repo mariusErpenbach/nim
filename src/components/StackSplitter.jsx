@@ -1,7 +1,7 @@
 import react, { useState, useEffect } from "react";
 
 const StackSplitter = (props) => {
-  const [numberOfSticks, setnumberOfSticks] = useState(props.stickAmount);
+  const [numberOfSticks, setnumberOfSticks] = useState(0);
   const [visible, setvisible] = useState(true);
 
   const splitOne = (button) => {
@@ -60,7 +60,7 @@ const StackSplitter = (props) => {
   };
 
   return (
-    <div className="stackSplitter">
+    <div id="stackSplitter">
       <input
         id="stickAmount"
         type="number"

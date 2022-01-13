@@ -7,17 +7,29 @@ const Game = (props) => {
   const [stackOne, setstackOne] = useState(0);
   const [stackTwo, setstackTwo] = useState(0);
   const [stackThree, setstackThree] = useState(0);
-  const [NoS, setNoS] = useState(0);
   const [Turn, setTurn] = useState("");
 
   const stackSplitterFinished = () => {
     setstackOne(document.getElementById("stackOne").innerHTML);
     setstackTwo(document.getElementById("stackTwo").innerHTML);
     setstackThree(document.getElementById("stackThree").innerHTML);
-    let parentElement = document.getElementById("game");
-    let stackSplitterElement = document.getElementsByClassName("stackSplitter");
-    parentElement.removeChild(stackSplitterElement[0]);
+    disabler("game","stackSplitter")
+    disabler ("stackArea", "extraStack")
+    gameStarter()
   };
+
+  const disabler = (parent,child) => {
+    let parentElement = document.getElementById(parent);
+    let childElement = document.getElementById(child)
+    return parentElement.removeChild(childElement)
+  }
+
+  const gameStarter = () => {
+    setTurn("Player")
+  }
+
+
+
   return (
     <React.Fragment>
       <div id="game">
@@ -28,26 +40,25 @@ const Game = (props) => {
         </header>
         <div id="stackArea">
           <main>
-            <div className="stacks">
-              <p id="stackOne"></p>
+            <div className="stacks" id="stackOne">
+              
             </div>
-            <div className="stacks">
-              <p id="stackTwo"></p>
+            <div className="stacks" id="stackTwo" >
+              
             </div>
-            <div className="stacks">
-              <p id="stackThree"></p>
+            <div className="stacks" id="stackThree">
             </div>
           </main>
-          <aside>
+          <aside id="extraStack">
             <p id="bigStack"></p>
           </aside>
         </div>
 
-        {Turn === "Player" ? <PlayerTurn /> : <div />}
+        {Turn === "Player" ? <PlayerTurn/> : <div />}
         {Turn === "Computer" ? <ComputerTurn /> : <div />}
         <StackSplitter
           finisher={stackSplitterFinished}
-          stickAmount={NoS}
+        
           stackOne={stackOne}
           stackTwo={stackTwo}
           stackThree={stackThree}
