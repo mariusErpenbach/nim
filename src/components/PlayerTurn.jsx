@@ -37,7 +37,7 @@ const highlighter = (e) => {
      console.log(playerInput)
      console.log(stacks)
     for(let i=0;i<stacks.length;i++){
-        if(stacks[i].style.backgroundColor="orange"){
+        if(stacks[i].style.backgroundColor==="orange"){
            
             stacks[i].innerHTML= parseInt(stacks[i].innerHTML)-playerInput;
             return props.passTurn()

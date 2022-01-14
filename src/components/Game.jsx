@@ -29,8 +29,7 @@ const Game = (props) => {
   }
 
 const passTurn = () => {
-   setTurn("Computer")
-
+   Turn === "Player" ? setTurn("Computer"):setTurn("Player")
 }
 
   return (
