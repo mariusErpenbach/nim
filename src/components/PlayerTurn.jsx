@@ -38,9 +38,12 @@ const highlighter = (e) => {
      console.log(stacks)
     for(let i=0;i<stacks.length;i++){
         if(stacks[i].style.backgroundColor="orange"){
-            return(stacks[i].innerHTML= parseInt(stacks[i].innerHTML)-playerInput)
+           
+            stacks[i].innerHTML= parseInt(stacks[i].innerHTML)-playerInput;
+            return props.passTurn()
         }
     }
+    
  }
 
     return (

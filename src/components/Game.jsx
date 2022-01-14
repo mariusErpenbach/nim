@@ -28,7 +28,10 @@ const Game = (props) => {
     setTurn("Player")
   }
 
+const passTurn = () => {
+   setTurn("Computer")
 
+}
 
   return (
     <React.Fragment>
@@ -53,12 +56,11 @@ const Game = (props) => {
             <p id="bigStack"></p>
           </aside>
         </div>
-
-        {Turn === "Player" ? <PlayerTurn/> : <div />}
-        {Turn === "Computer" ? <ComputerTurn /> : <div />}
+<div>
+        {Turn == "Player" ? <PlayerTurn passTurn={passTurn}/> : <ComputerTurn />}
+</div>
         <StackSplitter
           finisher={stackSplitterFinished}
-        
           stackOne={stackOne}
           stackTwo={stackTwo}
           stackThree={stackThree}

@@ -2,7 +2,7 @@ import react from "react";
 
 const ComputerTurn= () => {
     return (
-        <div id="UserTurn">
+        <div id="ComputerTurn">
         Computer turn
         </div>
     )
