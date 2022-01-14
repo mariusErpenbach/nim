@@ -56,13 +56,12 @@ const passTurn = () => {
           </aside>
         </div>
 <div>
-        {Turn == "Player" ? <PlayerTurn passTurn={passTurn}/> : <ComputerTurn />}
+        {Turn == "Player" ? <PlayerTurn passTurn={passTurn}/> : <div/>}
+        {Turn=="Computer"? <ComputerTurn /> :<div/>}
 </div>
         <StackSplitter
           finisher={stackSplitterFinished}
-          stackOne={stackOne}
-          stackTwo={stackTwo}
-          stackThree={stackThree}
+        
         />
       </div>
     </React.Fragment>

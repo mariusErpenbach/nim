@@ -40,6 +40,7 @@ const highlighter = (e) => {
         if(stacks[i].style.backgroundColor==="orange"){
            
             stacks[i].innerHTML= parseInt(stacks[i].innerHTML)-playerInput;
+            stacks[i].style.backgroundColor=""
             return props.passTurn()
         }
     }
