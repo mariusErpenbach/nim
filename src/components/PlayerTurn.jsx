@@ -27,7 +27,7 @@ const highlighter = (e) => {
     stacks[0].onclick = ""
     stacks[1].onclick = ""
     stacks[2].onclick = ""
- 
+    
     }
 
  const sendTurn = () => {
@@ -40,6 +40,9 @@ const highlighter = (e) => {
         if(stacks[i].style.backgroundColor==="orange"){
            
             stacks[i].innerHTML= parseInt(stacks[i].innerHTML)-playerInput;
+            if(parseInt(stacks[i].innerHTML)<0){
+                stacks[i].innerHTML = 0;
+            }
             stacks[i].style.backgroundColor=""
             return props.passTurn()
         }

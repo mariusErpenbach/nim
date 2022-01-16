@@ -57,7 +57,7 @@ const passTurn = () => {
         </div>
 <div>
         {Turn == "Player" ? <PlayerTurn passTurn={passTurn}/> : <div/>}
-        {Turn=="Computer"? <ComputerTurn /> :<div/>}
+        {Turn=="Computer"? <ComputerTurn passTurn={passTurn}/> :<div/>}
 </div>
         <StackSplitter
           finisher={stackSplitterFinished}
