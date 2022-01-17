@@ -1,9 +1,16 @@
 import react from "react";
 
-const Repeat = () => {
+
+const Repeat = (props) => {
+
+
+
+
     return (
         <div id="repeat">
-            <button>Repeat</button>
+        
+            <button onClick={props.resetGame}>Reset</button>
+      
         </div>
     )
 }
