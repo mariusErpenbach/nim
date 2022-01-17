@@ -7,9 +7,22 @@ const ComputerTurn= (props) => {
 
 
         return () => {
-            console.log("computer turn cleaned up")
+          winningCondition()
         }
     }, [])
+
+const winningCondition = () =>{
+
+    let stacks = document.getElementsByClassName("stacks")
+    let emptyStacks = []
+    for (let i=0;i<stacks.length;i++){
+        if (stacks[i].innerHTML==="0"){
+            emptyStacks.push(stacks[i])
+        }
+    }
+    if (emptyStacks.length===3){
+    console.log("COMPUTER HAS WON")}
+}
 
 const computermove = () => {
     let stacks = document.getElementsByClassName("stacks")

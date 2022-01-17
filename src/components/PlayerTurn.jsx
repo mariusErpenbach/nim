@@ -14,9 +14,23 @@ useEffect(() => {
     stacks[2].onclick = highlighter
     
     return () => {
-     console.log("playerturn-cleanup")   
+       winningCondition()
     }
 }, [])
+
+const winningCondition = () =>{
+    
+    let stacks = document.getElementsByClassName("stacks")
+    let emptyStacks = []
+    for (let i=0;i<stacks.length;i++){
+        if (stacks[i].innerHTML==="0"){
+            emptyStacks.push(stacks[i])
+        }
+    }
+    console.log(emptyStacks.length)
+    if (emptyStacks.length===3){
+     console.log ("PLAYER HAS WON")}
+}
 
 const highlighter = (e) => {
     e.preventDefault()
