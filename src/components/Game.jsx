@@ -3,20 +3,31 @@ import { Link } from "react-router-dom";
 import StackSplitter from "./StackSplitter";
 import PlayerTurn from "./PlayerTurn";
 import ComputerTurn from "./ComputerTurn";
+import Repeat from "./Repeat";
 const Game = (props) => {
-  const [stackOne, setstackOne] = useState(0);
-  const [stackTwo, setstackTwo] = useState(0);
-  const [stackThree, setstackThree] = useState(0);
-  const [Turn, setTurn] = useState("");
 
+  const [Turn, setTurn] = useState("");
+const [gameStatus, setgameStatus] = useState("inProgress")
   const stackSplitterFinished = () => {
-    setstackOne(document.getElementById("stackOne").innerHTML);
-    setstackTwo(document.getElementById("stackTwo").innerHTML);
-    setstackThree(document.getElementById("stackThree").innerHTML);
+ 
     disabler("game","stackSplitter")
     disabler ("stackArea", "extraStack")
     gameStarter()
   };
+
+  const winningCondition = () =>{
+
+    let stacks = document.getElementsByClassName("stacks")
+    let emptyStacks = []
+    for (let i=0;i<stacks.length;i++){
+        if (stacks[i].innerHTML==="0"){
+            emptyStacks.push(stacks[i])
+        }
+    }
+    if (emptyStacks.length===3){
+    return true
+  }else return false
+}
 
   const disabler = (parent,child) => {
     let parentElement = document.getElementById(parent);
@@ -29,8 +40,14 @@ const Game = (props) => {
   }
 
 const passTurn = () => {
-   Turn === "Player" ? setTurn("Computer"):setTurn("Player")
+    if (winningCondition()){
+      alert (`End${Turn} won`)
+      setTurn("repeat")
+    }
+    else {
+   Turn === "Player" ? setTurn("Computer"):setTurn("Player")}  
 }
+
 
   return (
     <React.Fragment>
@@ -40,6 +57,8 @@ const passTurn = () => {
             <i className="fas fa-times"></i>
           </Link>
         </header>
+      
+     
         <div id="stackArea">
           <main>
             <div className="stacks" id="stackOne">
@@ -55,13 +74,15 @@ const passTurn = () => {
             <p id="bigStack"></p>
           </aside>
         </div>
+        
 <div>
-        {Turn == "Player" ? <PlayerTurn passTurn={passTurn}/> : <div/>}
-        {Turn=="Computer"? <ComputerTurn passTurn={passTurn}/> :<div/>}
+        {Turn=="Player" ? <PlayerTurn passTurn={passTurn} winningCondition={winningCondition}/> : <div/>}
+        {Turn=="Computer"? <ComputerTurn passTurn={passTurn} winningCondition={winningCondition}/> :<div/>}
+        {Turn=="repeat"?<Repeat/>:<div/>}
 </div>
+
         <StackSplitter
           finisher={stackSplitterFinished}
-        
         />
       </div>
     </React.Fragment>
