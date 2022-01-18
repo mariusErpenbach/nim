@@ -1,5 +1,32 @@
-#stackSplitter{
+#turnDisplay{
   
-   background-color:lightblue;
+   
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width:25vw;
+   margin-top:3%;
+   
+#stackSplitter{
    width:50%;
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   input{
+      width:20em;
+      height:3em;
+      text-align: center;
+      margin-bottom:5%;
+      margin-top:3%;
+      font-size:2em;
+      -webkit-appearance: textfield;
+   }
+   #inputButton{
+      width:100%;
+      height:3em;
+      font-size:2em;
+   }
+}
 }

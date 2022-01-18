@@ -72,7 +72,7 @@ const passTurn = () => {
             <p id="bigStack"></p>
           </aside>
         </div>
-<div>
+<div id="turnDisplay">
         {Turn=="Player" ? <PlayerTurn passTurn={passTurn} winningCondition={winningCondition}/> : <div/>}
         {Turn=="Computer"? <ComputerTurn passTurn={passTurn} winningCondition={winningCondition}/> :<div/>}
         {Turn=="repeat"?<Repeat resetGame={resetGame}/>:<div/>}
