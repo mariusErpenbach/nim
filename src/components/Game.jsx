@@ -57,8 +57,6 @@ const passTurn = () => {
             <i className="fas fa-times"></i>
           </Link>
         </header>
-      
-     
         <div id="stackArea">
           <main>
             <div className="stacks" id="stackOne">
@@ -74,7 +72,6 @@ const passTurn = () => {
             <p id="bigStack"></p>
           </aside>
         </div>
-        
 <div>
         {Turn=="Player" ? <PlayerTurn passTurn={passTurn} winningCondition={winningCondition}/> : <div/>}
         {Turn=="Computer"? <ComputerTurn passTurn={passTurn} winningCondition={winningCondition}/> :<div/>}

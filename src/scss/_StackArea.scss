@@ -1,6 +1,8 @@
 #stackArea{
     display:flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     main{
     display:flex;
     .stacks{
@@ -11,11 +13,19 @@
       margin:5%;
       height:10em;
       width:10em;
-       color:white;
+      color:white;
+      font-size:2em;
     }
   }
-    aside{
-    background-color:chartreuse;
-    
+    #extraStack{
+    background-color:lightsalmon;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-width:10em;
+    min-height:10em;
+    #bigStack{
+      font-size:2em;
+    }
     }
   }
