@@ -7,10 +7,13 @@ import Repeat from "./Repeat";
 const Game = (props) => {
 
   const [Turn, setTurn] = useState("hold");
-  const [gameStatus, setgameStatus] = useState("hold")
+
 
   const stackSplitterFinished = () => {
-    setgameStatus("inProgress")
+document.getElementById("extraStack").style.display="none"
+    
+
+   
     gameStarter()
   };
 
