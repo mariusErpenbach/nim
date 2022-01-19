@@ -38,10 +38,10 @@ const StackSplitter = (props) => {
   const lockStack = () => {
     let stackOne = document.getElementById("stackOne");
     let stackTwo = document.getElementById("stackTwo");
-    let inputButton = document.getElementById("inputButton");
+    let inputButton = document.getElementById("splitButton");
     var inputfield = document.getElementById("stickAmount");
     let bigStack = document.getElementById("bigStack");
-
+    if (inputfield.value>0){
     if (stackOne.innerHTML < 1  ) {
     if (inputfield.value <=2){return alert ("send atleast 3 sticks to the big staple")}
       // if stackOne is filled already -> skip splitOne
@@ -57,7 +57,9 @@ const StackSplitter = (props) => {
         return splitTwo(numberOfSticks);
       }
     }
-  };
+  }
+  else return alert("please enter a value")
+};
 
   return (
     <div id="stackSplitter">
@@ -68,8 +70,8 @@ const StackSplitter = (props) => {
           setnumberOfSticks(document.getElementById("stickAmount").value);
         }}
       ></input>
-      <button id="inputButton" onClick={lockStack}>
-        lock stack
+      <button  id="splitButton" className="inputButton" onClick={lockStack}>
+        send to big stack
       </button>
     </div>
   );

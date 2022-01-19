@@ -21,7 +21,7 @@ const PlayerTurn = (props) => {
     let clickedStack = document.getElementById(e.target.id);
     console.log(clickedStack);
     clickedStack.style.backgroundColor = "orange";
-   
+    
   };
 
   const sendTurn = () => {
@@ -29,6 +29,7 @@ const PlayerTurn = (props) => {
     var playerInput = document.getElementById("playerturnInput").value;
     console.log(playerInput);
     console.log(stacks);
+    if (playerInput>0){
     for (let i = 0; i < stacks.length; i++) {
       if (stacks[i].style.backgroundColor === "orange") {
         stacks[i].innerHTML = parseInt(stacks[i].innerHTML) - playerInput;
@@ -38,15 +39,18 @@ const PlayerTurn = (props) => {
         stacks[i].style.backgroundColor = "";
         return props.passTurn();
       }
-    }
+    }}
+    else return (alert("choose a number"))
   };
 
   return (
     <div id="PlayerTurn">
+        <div>
       <p>Your Turn</p>
       <p> click the staple you want to withdraw from</p>
+      </div>
       <input id="playerturnInput" type="number"></input>
-      <button onClick={sendTurn}>send</button>
+      <button className="inputButton" onClick={sendTurn}> send </button>
     </div>
   );
 };

@@ -9,7 +9,7 @@ const Repeat = (props) => {
     return (
         <div id="repeat">
         
-            <button onClick={props.resetGame}>Reset</button>
+            <button  className="inputButton" onClick={props.resetGame}>Reset</button>
       
         </div>
     )

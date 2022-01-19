@@ -42,7 +42,7 @@ document.getElementById("extraStack").style.display="none"
 
 const passTurn = () => {
     if (winningCondition()){
-      alert (`End${Turn} won`)
+      alert (`${Turn} won`)
       return setTurn("repeat")
     }
     else {
@@ -50,6 +50,7 @@ const passTurn = () => {
 }
   const resetGame = () => {
     setTurn("hold")
+    document.getElementById("extraStack").style.display="flex"
   }
 
   return (
